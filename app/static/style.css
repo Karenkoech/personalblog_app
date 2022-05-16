@@ -1,0 +1,84 @@
+body{
+  background-image: linear-gradient(to right, #9ad2df, #f4a6ac, #f49f90);
+}
+#mylogo{
+  width: 60px;
+  height: 60px;
+  margin-left: 4px;
+  margin-top: 2px;
+}
+#navbar_right{
+  margin-left: 70%;
+  color: rgb(242, 84, 84);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+
+}
+#navbar-left{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+  color: rgb(242, 84, 84);
+}
+
+.main__container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-self: center;
+  height: 90vh;
+  margin: 0 auto;
+  align-items: center;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 40px;
+}
+
+.main__content h1{
+  text-align: center;
+  font-style: oblique;
+  font-size: 3rem;
+  background-color: pink;
+  background-image: linear-gradient(to top, rgba(222, 94, 205, 0.911) 0%,rgb(122, 138, 227) 100%);
+  background-size: 100%;
+
+
+}
+.main__content h2{
+  margin-top: 2rem;
+  font-style: italic;
+  font-size: 2rem;
+  text-align: center;
+  background-color: pink;
+  background-image: linear-gradient(to top,rgb(230, 183, 230) 0%,rgb(134, 123, 224) 100%);
+  background-size: 100%;
+
+}
+.main__content p{
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 600;
+  color:rgb(17, 1, 1) ;
+
+}
+.main__btn{
+
+  font-size: 1rem;
+ 
+  padding: 14px 32px;
+  border-radius: 4px;
+  border: none;
+  margin-top: 2rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.4s;
+  outline: none;
+}
+.main img{
+  height: 400px;
+  float: right;
+  width: 400px;
+  border-radius: 60%;
+  margin-top: -100px;
+
+}
