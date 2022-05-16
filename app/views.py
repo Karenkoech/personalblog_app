@@ -24,12 +24,13 @@ def dashboard():
 def create_post():
     if request.method == 'POST':
         text = request.form.get('text')
+        title=request.form.get('title')
         
-        if not text:
+        if not text or not title:
             flash('Please fill in all fields',category='danger')
             
         else:
-            post = Post(text=text,author=current_user.id)
+            post = Post(text=text,title=title,author=current_user.id)
             db.session.add(post)
             db.session.commit()
             flash('Post created successfully!', category='success')
@@ -112,5 +113,10 @@ def vote_post(post_id):
         db.session.commit()
     return redirect(url_for('views.home'))
 
-
-
+@views.route('/subscribe/')
+@login_required
+def subscribe():
+    
+   
+    return render_template('subscribe.html',user=current_user)
+    
