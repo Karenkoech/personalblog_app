@@ -26,8 +26,10 @@
         </div>
         </div>
     <div class="card-body rows="10" cols="20">
-    <div class="card-text">{{post.text}}</div>
+        <h5 class="card-title text-uppercase text-success text-font-bold">{{ post.title }}</h5>
+        <p class="card-text">{{ post.text }}</p>
         <br />
+    </div>
         <div class="collapse" id="comments-{{post.id}}">
             <div class="card">
             <div class="card-body" id="comments-expanded-{{post.id}}">
@@ -38,7 +40,7 @@
                 :{{ comment.text }}
             </div>
             <div>
-                <small class="text-muted">{{comment.date_created}}</small>
+                <small class="text-muted">{{comment.date_created.strftime('%Y-%m-%d')}}</small>
                     {% if user.id==comment.author or user.id == post.author%}
                     
                 </div>
@@ -58,7 +60,6 @@
 </div>
     <p class="card-text">
         {% if post.comments|length > 0%}
-
         <a data-bs-toggle="collapse" href="#comments-{{ post.id }}" role="button">
             <small> See {{ post.comments|length}} comments</small>
         </a>
@@ -71,8 +72,7 @@
             <button type="submit" class="btn btn-outline-info">Comment:</button>
         </form>
     </div>
-    <div class="card-footer text-muted">{{post.date_created}}
-
+    <div class="card-footer text-muted">{{post.date_created.strftime('%Y-%m-%d')}}
     </div>
     {% endfor%}
 </div>
@@ -81,5 +81,8 @@
 <div align="center"> <br/>
     <a href="/create_post" class="btn btn-lg btn-primary">Add blog post</a>
 </div>
+<footer class="footer">
+    <div class="container pt-lg-5">
+      <span class="text-muted">&copy; {{ current_year }}Karen Koech</span>
 {% endblock %}
 {% endblock %}

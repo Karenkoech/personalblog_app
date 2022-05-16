@@ -2,7 +2,7 @@ body{
   background-image: linear-gradient(to right, #9ad2df, #f4a6ac, #f49f90);
 }
 #mylogo{
-  width: 60px;
+  width: 80px;
   height: 60px;
   margin-left: 4px;
   margin-top: 2px;
@@ -81,4 +81,8 @@ body{
   border-radius: 60%;
   margin-top: -100px;
 
+}
+#subnav{
+  margin-left: 70%;
+  padding-left: 30px;
 }

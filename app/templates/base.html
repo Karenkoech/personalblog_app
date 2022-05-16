@@ -13,7 +13,7 @@
     <title>{% block title%}Personal Blog{% endblock %}</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark ">
+    <nav class="navbar navbar-expand-lg bg-secondary navbar-dark ">
       <div class="container-fluid">
         <a class="navbar-brand" href="">
           <img src="{{url_for('static',filename='logo.jpeg')}}" alt="Future is Tech!" style="width:40px;" id="mylogo"> 
@@ -26,11 +26,15 @@
           <div class="navbar-nav mr-auto"id="navbar-left">
           <a class="nav-link" href="{{url_for('views.home')}}">Home</a>
           <a class="nav-link align-items-center" href="{{url_for('views.dashboard')}}">Dashboard</a>
+
+          <div class="navbar-nav" id="subnav">
+          <a class="nav-link" href="{{url_for('views.subscribe')}}">Subscribe</a>
+
+        </div>
           
         </div>
           <div class="navbar-nav" id="navbar_right">
             {%if user.is_authenticated%}
-            <a class="nav-item nav-link" href="{{ url_for('views.create_post') }}">Add Blog</a>
             <a class="nav-link" href="{{url_for('auth.logout')}}">Logout</a>
               {%else%}
               <a class="nav-link align-center" href="{{url_for('auth.register')}}">Register</a>
@@ -65,7 +69,9 @@
     {% endwith%}
       <div class="container">
         {% block content %}
+        
         {% endblock %}
+
       </div>
     
 
