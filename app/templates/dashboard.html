@@ -1,0 +1,19 @@
+{% extends "base.html"%}
+{% block title %}Dashboard{% endblock %}
+{% block content%}
+
+<div class="main">
+    <div class="main__container">
+      <div class="main__content">
+        <h1>Hello!I'm CAREN</h1>
+        <h2> A Full-Stack Software Developer</h2>
+        <p> I am a <span> Software Enthusiast and I love to code!</span>
+             <br>Dancing and jump-rope are my ultimate ways of keeping fit.</p>
+        <button class="main__btn bg-info"> <a href="/home">More</a></button>
+      </div>
+      <div class="main img">
+        <img src="{{url_for('static',filename='CarenK.jpeg')}}" alt="image">
+      </div>
+    </div>
+</div>
+{% endblock %}
