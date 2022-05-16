@@ -13,6 +13,7 @@ class User(db.Model, UserMixin):
     posts = db.relationship('Post', backref='user', passive_deletes=True)
     comments = db.relationship('Comment', backref='user', passive_deletes=True)
     votes = db.relationship('Vote', backref='user', passive_deletes=True)
+    subscriptions = db.relationship('Subscription', backref='user', passive_deletes=True)
 
 
    
@@ -20,6 +21,7 @@ class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
     text = db.Column(db.Text, nullable=False)
+    title = db.Column(db.String(120), nullable=False)
     author= db.Column(db.Integer, db.ForeignKey('user.id',ondelete="CASCADE"),nullable=False)
     comments = db.relationship('Comment', backref='post', passive_deletes=True)
     votes = db.relationship('Vote', backref='post', passive_deletes=True)
@@ -36,6 +38,13 @@ class Vote(db.Model):
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
     author= db.Column(db.Integer, db.ForeignKey('user.id',ondelete="CASCADE"),nullable=False)
     post_id=db.Column(db.Integer, db.ForeignKey('post.id',ondelete="CASCADE"),nullable=False)
+
+class Subscription(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    date_created = db.Column(db.DateTime, default=datetime.utcnow)
+    author= db.Column(db.Integer, db.ForeignKey('user.id',ondelete="CASCADE"),nullable=False)
+    post_id=db.Column(db.Integer, db.ForeignKey('post.id',ondelete="CASCADE"),nullable=False)
+    
 
 
   
